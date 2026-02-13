@@ -1,0 +1,55 @@
+h1 {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#header {
+    width: 100%;
+}
+
+.backToHome {
+    width: 100%;
+}
+
+#toolsTable {
+    width: fit-content;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /**padding-top: 1rem;
+    padding-bottom: 1rem;*/
+    border: 2px black solid;
+}
+.toolItemFlame {
+    display: block;
+    width: calc(100% - 3rem);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.toolItemContent {
+    width: fit-content;
+    background-color: #333355;
+    border: 1px blue solid;
+    padding: 1rem;
+}
+.toolItemContentChars {
+    color: white;
+    text-decoration: none;
+}
+.clickToOpen {
+    display: block;
+    text-align: end;
+    width: calc(100%);
+    color: #aaffff;
+}
+
+#space {
+    margin-top: 10rem;
+}

@@ -4,8 +4,87 @@
 	    <!--SNS等で表示されるサムネイル画像を設定したかったら：https://stackoverflow.com/questions/72198755/how-to-add-a-thumbnail-for-your-website-using-html-->
 	    <meta charset="utf-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1" />
-	    <title>HTMLひながた</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+	    <title>ちまっとしたツール群</title>
     </head>
     <body>
+        <span id="root"></span>
+        <div id="header">
+            <h1>ちまっとしたツール群</h1>
+        </div>
+        <div id="content">
+            <h2>一覧</h2>
+            <div id="toolsTable"></div>
+        
+            <script>
+                window.onload = async function(){
+                    const table = document.getElementById("toolsTable");
+                    console.log(table)
+                    try {
+		    		    var response = await fetch("./list.csv");
+			    	    if(!response.ok){
+			        		throw new Error("ネットワークむり[diary.csv]");
+				        }
+        				var data = await response.text();
+	        			dataArray = data.split("\n").filter(item => item.length > 0).slice(1);
+                        
+                        for (let i = 0; i < dataArray.length; i++) {
+                            var tool = dataArray[i].split(',');
+                            const item = createItem(tool[0], tool[1], tool[2])
+                            table.append(item);
+
+                            // 仕切り
+                            if (i < dataArray.length - 1) {
+                                const hr = document.createElement("hr");
+                                table.append(hr);
+                            }
+                            else {
+                                const end = document.createElement("h2");
+                                end.innerText = "以上";
+                                table.append(end)
+                            }
+                        }
+    	    	    }
+        			catch(error) {
+		    		    errormes();
+			        }
+
+                    function errormes(){
+                        table.innerText = "読み込み中にエラーが発生しました。"
+                    }
+
+                    function createItem(name, discription, url){
+                        // 枠
+                        const flame = document.createElement("a");
+                        flame.setAttribute("class", "toolItemFlame");
+                        flame.setAttribute("href", `${url}/`);
+                        flame.setAttribute("target", "_blank")
+                        flame.setAttribute("rel", "noopener noreferrer");
+                        const item = document.createElement("div");
+                        item.setAttribute("class", "toolItemContent");
+
+                        //中身
+                        const Title = document.createElement("h3")
+                        Title.setAttribute("class", "toolItemContentChars");
+                        Title.innerText = name;
+                        const Discription = document.createElement("p");
+                        Discription.setAttribute("class", "toolItemContentChars");
+                        Discription.innerText = discription;
+                        const clickGuide = document.createElement("span");
+                        clickGuide.setAttribute("class", "clickToOpen toolItemContentChars");
+                        clickGuide.innerText = "Click To Open"
+
+                        //梱包
+                        item.append(Title);
+                        item.append(Discription);
+                        item.append(clickGuide);
+
+                        flame.append(item);
+                        return flame;
+                    }
+                }
+            </script>
+        </div>
     </body>
 </html>
