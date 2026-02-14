@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
         // 下位ページ
         IsRootPage = false
         const BackButton = document.createElement("a");
-        BackButton.setAttribute("href", "https://or-11.github.io/smalltools/index.html");
+        BackButton.setAttribute("href", "https://or-11.github.io/smalltools/");
         BackButton.setAttribute("target", "_self");
         BackButton.setAttribute("rel", "noopener noreferrer");
         BackButton.setAttribute("class", "backToHome");
