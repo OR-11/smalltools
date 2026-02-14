@@ -17,13 +17,20 @@
         </div>
         <div id="content">
             <div id="input">
-                <label for="unicodeInput">Unicodeを入力：</label>
-                <input
-                    type="text"
-                    id="unicodeInput"
-                    name="name"
-                    required
-                    pattern="(\\u([0-9]|[A-F]))+" />
+                <label for="unicodeInput">
+                    Unicodeを入力：
+                    <input
+                        type="text"
+                        id="unicodeInput"
+                        value="" />
+                </label><br><br>
+                <label for="result">
+                    結果：
+                    <input
+                        type="text"
+                        id="result"
+                        value="" />
+                </label>
             </div>
 
             <div id="space">
