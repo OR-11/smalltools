@@ -1,2 +1,2 @@
 表示名,説明,ディレクトリ
-UnicodeConverter,Unicodeコードポインタを利用して文字列が書ける,unicodeConverter
+UnicodeConverter,Unicodeコードポインタから文字列に変換,unicodeConverter
