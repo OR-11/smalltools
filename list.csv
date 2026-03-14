@@ -1,2 +1,3 @@
 表示名,説明,ディレクトリ
 UnicodeConverter,Unicodeコードポインタから文字列に変換,unicodeConverter
+ContrastRatioCalculator,入力された2色のコントラスト比を算出,contrastRatio
