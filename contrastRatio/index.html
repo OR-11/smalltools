@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+	    <!--SNS等で表示されるサムネイル画像を設定したかったら：https://stackoverflow.com/questions/72198755/how-to-add-a-thumbnail-for-your-website-using-html-->
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../style.css">
+        <script src="../script.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="contrastRatioCalculator.js"></script>
+	    <title>コントラスト比計算機</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>コントラスト比計算機</h1>
+        </div>
+        <div id="content">
+            <p>入力はsRGBで。</p>
+            <div id="colorCalc">
+                <div id="boxColor1" class="colorUI">
+                    <div id="color1" class="colorDisplay" style="background-color: blueviolet;"></div>
+                    <label for="inputColor1">
+                        色1：
+                        <input 
+                            type="text"
+                            class="input"
+                            id="inputColor1"
+                            value="#8A2BE2" />
+                    </label>
+                </div>
+                <div id="boxColor2" class="colorUI">
+                    <div id="color2" class="colorDisplay" style="background-color: cadetblue;"></div>
+                    <label for="inputColor2">
+                        色2：
+                        <input 
+                            type="text"
+                            class="input"
+                            id="inputColor2"
+                            value="#5f9ea0" />
+                    </label>
+                </div>
+                <div id="boxColor3" class="colorUI">
+                    <p id="value"></p>
+                </div>
+            </div>
+            <p>使わせていただいたアルゴリズム：<a href="https://qiita.com/Pseudonym/items/93d4e91828512a5ea6e3">https://qiita.com/Pseudonym/items/93d4e91828512a5ea6e3</p>
+        </div>
+    </body>
+</html>
