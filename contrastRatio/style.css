@@ -1,1 +1,20 @@
+#colorCalc {
+    display: flex;
+    flex-direction: row;
 
+    height: fit-content;
+}
+
+.colorUI {
+    min-width: 300px;
+    border: 1px black solid;
+    margin: 1rem;
+}
+.colorDisplay {
+    height: 5rem;
+}
+
+label {
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+}
