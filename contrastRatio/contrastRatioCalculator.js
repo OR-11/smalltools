@@ -101,7 +101,7 @@
         }
         const col1 = parseColor(c1);
         const col2 = parseColor(c2);
-        return (col1.L >= col2.L ? (col1.L + 0.05) / (col2.L + 0.05) : (col2.L + 0.05) / (col1.L + 0.05));
+        return (col1.L + 0.05) / (col2.L + 0.05);
     }
 
     async function RatioCalc(hex1, hex2) {
