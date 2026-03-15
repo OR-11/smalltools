@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
 
     colorInput1.addEventListener('input', inputChange);
     colorInput2.addEventListener('input', inputChange);
+    inputChange();
 });
 
 function inputChange(event){
